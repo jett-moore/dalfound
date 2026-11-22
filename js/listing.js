@@ -96,7 +96,7 @@ function createCard(item) {
   card.dataset.itemId = item.id;
 
   const img = document.createElement("img");
-  img.src = item[FIELDS.photo];
+  img.src = item.photoUrl || item.photo;
   img.alt = `Found item: ${item[FIELDS.category]}`;
   img.loading = "lazy";
 
