@@ -1,6 +1,8 @@
 // js/browse.js – claim pop-up (WBS 1.3.1). Saving the claim is WBS 1.3.2.
 // A card needs data-item-id, an img, .item-category, and a .claim-button.
 
+import { saveClaim } from "./claims.js";
+
 const dialog = document.querySelector("#claim-dialog");
 const form = document.querySelector("#claim-form");
 const message = document.querySelector("#claim-message");
@@ -22,8 +24,9 @@ document.querySelector("#claim-close").addEventListener("click", () => {
   dialog.close();
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
+
   const claim = {
     itemId: activeItemId,
     name: nameInput.value.trim(),
@@ -31,17 +34,50 @@ form.addEventListener("submit", (event) => {
     detail: detailInput.value.trim(),
   };
 
+  // Check that all required information is valid.
   const errors = validateClaim(claim);
+
   if (errors.length > 0) {
     showMessage(errors.join(" "), "error");
     return;
   }
 
-  submitClaimRequest(claim);
-  showMessage(
-    "This claim is complete and ready to save. Nothing has been stored yet.",
-    "ready"
-  );
+  // Prevent the user from submitting more than once.
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (submitButton) {
+    submitButton.disabled = true;
+  }
+
+  try {
+    // Save the claim to Firebase.
+    await saveClaim(
+      claim.itemId,
+      claim.name,
+      claim.email,
+      claim.detail
+    );
+
+    showMessage(
+      "Your claim has been submitted successfully!",
+      "ready"
+    );
+
+    form.reset();
+
+  } catch (error) {
+    console.error("Error saving claim:", error);
+
+    showMessage(
+      "Sorry, your claim could not be submitted. Please try again.",
+      "error"
+    );
+
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+    }
+  }
 });
 
 function openClaim(card) {
@@ -77,8 +113,4 @@ function showMessage(text, kind) {
   message.className = `form-message ${kind}`;
 }
 
-// WBS 1.3.2 replaces this. It should save the item ID, name, email, detail,
-// and the time submitted, then show a confirmation.
-function submitClaimRequest(claim) {
-  console.log("Validated claim ready for 1.3.2", claim);
-}
+
