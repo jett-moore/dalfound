@@ -2,7 +2,7 @@
 
 A lost-and-found website for Dalhousie University. CSCI 2690 – Team 6.
 
-Live site: https://<jett-moore>.github.io/dalfound/
+Live site: https://jett-moore.github.io/dalfound/
 
 ## Project structure
 
@@ -85,11 +85,11 @@ Photos are in `images/`. Use any date found from the past week.
 | 8 | `waterbottle.jpeg` | Water Bottles & Containers | Dalplex / Wickwire Field | Dal Security |
 | 9 | `foundbottle.jpg` | Water Bottles & Containers | Sexton Campus | Dal Security |
 | 10 | `laptop.jpg` | Laptops & Tablets | Goldberg Computer Science Building | Dal Security |
-| 11 | `charger.jpg` | Other Electronics | Killam Library | DSU Help Desk (SUB) |
+| 11 | `headphones.jpg` | Other Electronics | Killam Library | DSU Help Desk (SUB) |
 | 12 | `backpack.jpg` | Bags & Backpacks | Rowe Management Building | Dal Security |
 | 13 | `jacket.jpg` | Clothing | Student Union Building (SUB) | DSU Help Desk (SUB) |
 | 14 | `textbook.jpg` | Books & School Supplies | Life Sciences Centre | Dal Security |
-| 15 | `lacrosse-stick.jpg` | Sports Equipment | Dalplex / Wickwire Field | Dal Security |
+| 15 | `basketball.jpg` | Sports Equipment | Dalplex / Wickwire Field | Dal Security |
 | 16 | `umbrella.jpg` | Other | Carleton Campus | Dal Security |
 
 ### 3. Add the sample claims (live site)
