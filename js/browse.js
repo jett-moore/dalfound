@@ -14,7 +14,14 @@ const detailInput = document.querySelector("#claim-detail");
 
 let activeItemId = "";
 
+const viewer = document.querySelector("#photo-viewer");
+const viewerImg = document.querySelector("#photo-viewer-img");
+
 document.querySelector("#item-list").addEventListener("click", (event) => {
+  if (event.target.matches(".item-card img")) {
+    openPhoto(event.target);
+    return;
+  }
   const button = event.target.closest(".claim-button");
   if (!button) return;
   openClaim(button.closest(".item-card"));
@@ -23,6 +30,18 @@ document.querySelector("#item-list").addEventListener("click", (event) => {
 document.querySelector("#claim-close").addEventListener("click", () => {
   dialog.close();
 });
+
+photo.addEventListener("click", () => openPhoto(photo));
+
+// Clicking the photo, the dark backdrop, or Close all dismiss the viewer.
+viewer.addEventListener("click", () => viewer.close());
+
+function openPhoto(image) {
+  if (!image.src) return;
+  viewerImg.src = image.src;
+  viewerImg.alt = image.alt;
+  viewer.showModal();
+}
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
