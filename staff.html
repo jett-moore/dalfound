@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DalFound – Staff</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/staff.css">
 </head>
 <body>
   <header class="site-header">
@@ -20,39 +21,46 @@
     <h1>Staff</h1>
 
     <!-- WBS 1.4.1: Staff login and access rules -->
-    <section aria-label="Staff access">
+    <section class="staff-auth" aria-label="Staff access">
 
-      <div id="loading-view" role="status" aria-live="polite" hidden>
+      <div id="loading-view" class="staff-panel" role="status" aria-live="polite" hidden>
         <p>Checking staff access...</p>
       </div>
 
-      <div id="login-view">
+      <div id="login-view" class="staff-panel">
         <h2>Staff login</h2>
-        <p>Sign in with your authorized staff account.</p>
+        <p class="staff-hint">Sign in with your authorized staff account.</p>
+
+        <p id="login-error" class="staff-error" role="alert"></p>
 
         <form id="login-form">
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email"
-                 autocomplete="username" required>
+          <div class="form-field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email"
+                   autocomplete="username" required>
+          </div>
 
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password"
-                 autocomplete="current-password" required>
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+                   autocomplete="current-password" required>
+          </div>
 
           <button id="login-btn" type="submit">Sign in</button>
         </form>
-
-        <p id="login-error" role="alert"></p>
       </div>
 
-      <div id="staff-view" hidden>
-        <h2>Staff dashboard</h2>
-        <p id="signed-in-as"></p>
+      <div id="staff-view" class="staff-panel" hidden>
+        <div class="staff-dashboard-header">
+          <div>
+            <h2>Staff dashboard</h2>
+            <p id="signed-in-as" class="staff-hint"></p>
+          </div>
+          <button id="signout-btn" class="staff-secondary" type="button">Sign out</button>
+        </div>
 
         <!-- WBS 1.4.2 and 1.4.3: Staff features go here -->
-        <p>Claim requests and item management will appear here.</p>
-
-        <button id="signout-btn" type="button">Sign out</button>
+        <p class="placeholder">Claim requests and item management will appear here.</p>
       </div>
 
     </section>

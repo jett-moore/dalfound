@@ -69,21 +69,52 @@ main {
   border: 1px solid var(--border);
 }
 
+/* "contain" shows the whole item instead of cropping it */
 .item-card img,
 .claim-dialog img {
   display: block;
   width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: contain;
   background: #ececec;
+  cursor: zoom-in;
 }
 
-.item-card img { height: 200px; }
-
-
 .claim-dialog img {
-  height: auto;
-  max-height: 220px;
+  aspect-ratio: auto;
+  height: 260px;
   margin-top: 16px;
+}
+
+/* Full-size photo viewer, opened by clicking a photo */
+.photo-viewer {
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.photo-viewer::backdrop { background: rgba(0, 0, 0, 0.8); }
+
+.photo-viewer img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+
+.photo-viewer button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px 12px;
+  border: none;
+  background: var(--dark);
+  color: white;
+  font: inherit;
+  cursor: pointer;
 }
 
 .item-category {
