@@ -78,7 +78,7 @@ Photos are in `images/`. Use any date found from the past week.
 | 1 | `phone.jpg` | Phones | Killam Library | Dal Security |
 | 2 | `keys.jpg` | Keys | Student Union Building (SUB) | DSU Help Desk (SUB) |
 | 3 | `keysWithLock.jpg` | Keys | Dalplex / Wickwire Field | Dal Security |
-| 4 | `wallet.jpeg` | Wallets & Cards | Goldberg Computer Science Building | Dal Security |
+| 4 | `wallet.jpg` | Wallets & Cards | Goldberg Computer Science Building | Dal Security |
 | 5 | `earring.jpg` | Jewellery & Watches | Residence | Howe Hall front desk |
 | 6 | `blackglasses.jpg` | Glasses | Life Sciences Centre | DSU Help Desk (SUB) |
 | 7 | `foundglasses.jpg` | Glasses | Killam Library | Dal Security |
