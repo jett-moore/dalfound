@@ -83,6 +83,7 @@ main {
 .claim-dialog img {
   aspect-ratio: auto;
   height: 260px;
+  margin-top: 16px;
 }
 
 /* Full-size photo viewer, opened by clicking a photo */
