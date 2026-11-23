@@ -4,6 +4,14 @@ A lost-and-found website for Dalhousie University. CSCI 2690 – Team 6.
 
 Live site: https://jett-moore.github.io/dalfound/
 
+## Requirements
+- Google Chrome on a desktop or laptop
+- An internet connection (the site uses the team's Firebase project, already configured in js/firebase-config.js)
+
+## Running the site
+- Easiest: open the live site at https://jett-moore.github.io/dalfound/
+- To run locally: clone this repository and open the folder with any static web server (for example, VS Code Live Server), then open index.html in Chrome. No build step or install is needed.
+
 ## Project structure
 
 | File | Purpose |
