@@ -14,7 +14,6 @@ Live site: https://jett-moore.github.io/dalfound/
 | `css/style.css` | Shared styles |
 | `js/lists.js` | Set lists for categories, locations and drop-off points |
 | `js/firebase-config.js` | Firebase connection settings |
-| `test.html` | Temporary database test (delete after Phase 1) |
 
 ## Database fields (Firestore)
 
