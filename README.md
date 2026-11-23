@@ -2,7 +2,7 @@
 
 A lost-and-found website for Dalhousie University. CSCI 2690 – Team 6.
 
-[Live site: https://<jett-moore>.github.io/dalfound/](https://jett-moore.github.io/dalfound/)
+Live site: https://jett-moore.github.io/dalfound/
 
 ## Project structure
 
