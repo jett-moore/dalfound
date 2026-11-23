@@ -71,10 +71,19 @@ main {
 
 .item-card img,
 .claim-dialog img {
+  display: block;
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  object-fit: contain;
   background: #ececec;
+}
+
+.item-card img { height: 200px; }
+
+
+.claim-dialog img {
+  height: auto;
+  max-height: 220px;
+  margin-top: 16px;
 }
 
 .item-category {
